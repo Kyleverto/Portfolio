@@ -1,10 +1,12 @@
 const mongoose = require("mongoose");
-const dotenv = require("dotenv").config();
 const logger = require("./logger.js");
+require("colors");
+
+const mongoURI = process.env.MONGO_URI;
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGO_URI);
+    const conn = await mongoose.connect(mongoURI);
     logger.info(`MongoDB Connected: ${conn.connection.host}`.cyan.underline);
   } catch (err) {
     logger.error(`Error: ${err.message}`);
