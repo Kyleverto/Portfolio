@@ -9,7 +9,7 @@ const projects = [
       "A professional portfolio website to showcase my software development journey.",
     technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
     githubLink: "https://github.com/kyleverto/portfolio",
-    liveDemo: "https://kylevertodoulosportfolio.com",
+    liveDemo: "https://kyleverto-portfolio.com",
     featured: true,
   },
   {
