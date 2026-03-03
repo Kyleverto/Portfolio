@@ -9,7 +9,7 @@ const connectDB = async () => {
     const conn = await mongoose.connect(mongoURI);
     logger.info(`MongoDB Connected: ${conn.connection.host}`.cyan.underline);
   } catch (err) {
-    logger.error(`Error: ${err.message}`);
+    logger.error(`Error failed to connect to database: ${err.message}`);
     process.exit(-1);
   }
 };

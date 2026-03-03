@@ -1,30 +1,28 @@
 require("dotenv").config();
-const http = require("http");
+const express = require("express");
+const morgan = require("morgan");
+const cors = require("cors");
 const connectDB = require("./config/db.js");
 const logger = require("./config/logger.js");
+const port = process.env.PORT || 3000;
 
-const server = http.createServer((req, res) => {
-  logger.http(req.method + ": " + req.url);
+const app = express();
+app.use(
+  morgan(process.env.MORGAN_FORMAT || "dev", { stream: logger.httpStream }),
+);
+app.use(cors());
+app.use(express.json());
+q;
 
-  if (req.url == "/hello") {
-    res.writeHead(200, { "Content-Type": "text/plain" });
-    res.write("Hello, World!\n");
-    res.write("You requested: " + req.url);
-    res.end();
-  } else {
-    res.writeHead(404, { "Content-Type": "text/plain" });
-    res.write("ERROR 404: Not Found\n");
-    res.write("You requested: " + req.url);
-    res.end();
-  }
+app.use((req, res, next) => {
+  logger.http(`${req.method}: ${req.url}`);
+  next();
 });
 
-connectDB()
-  .then(() => {
-    server.listen(process.env.PORT || 8000, () => {
-      logger.info(`Server listening on port ${process.env.PORT}...`);
-    });
-  })
-  .catch((err) => {
-    logger.error(err);
-  });
+app.use("/api/projects", require("./routes/projectRoutes"));
+
+connectDB();
+
+app.listen(port, () => {
+  logger.info(`Server listening on port ${port}...`);
+});
