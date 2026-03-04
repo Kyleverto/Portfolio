@@ -12,7 +12,6 @@ app.use(
 );
 app.use(cors());
 app.use(express.json());
-q;
 
 app.use((req, res, next) => {
   logger.http(`${req.method}: ${req.url}`);
