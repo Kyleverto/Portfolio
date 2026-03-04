@@ -3,14 +3,11 @@ import { Mail, Github } from "lucide-react";
 const Header = () => {
   return (
     <header className="bg-slate-900 text-white py-6 px-10 flex justify-between items-center sticky top-0 z-50 shadow-md">
-      {/* Brand/Name Section */}
       <div className="flex flex-col">
         <h1 className="text-2xl font-bold tracking-tight uppercase">
           Kyle <span className="text-blue-400">|</span> Student Developer
         </h1>
       </div>
-
-      {/* Social/Contact Links */}
       <div className="flex gap-6 items-center">
         <a
           href="mailto:Kyleverto@gmail.com"

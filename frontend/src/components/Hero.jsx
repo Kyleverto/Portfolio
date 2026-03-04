@@ -9,8 +9,10 @@ const Hero = () => {
         <span className="text-slate-200 font-semibold">
           Software Developer Student
         </span>{" "}
-        at Harding University focused on the MERN Stack. I build scalable,
-        user-focused applications with a clean-code approach.
+        at Harding University focused on the web development. I build full stack
+        web applications that are scalable, modular, and secure. I value solving
+        real world problems, and I am focused on succeeding in modern software
+        development.
       </p>
       <div className="mt-10 flex justify-center gap-4">
         <a
