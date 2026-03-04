@@ -3,6 +3,7 @@ import axios from "axios";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import ProjectCard from "./components/ProjectCard";
+const API_URL = import.meta.env.VITE_API_URL;
 
 function App() {
   const [projects, setProjects] = useState([]);
@@ -11,7 +12,7 @@ function App() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/api/projects");
+        const response = await axios.get(API_URL);
         setProjects(response.data);
         setLoading(false);
       } catch (error) {
