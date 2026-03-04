@@ -42,13 +42,16 @@ function App() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {projects.length > 0 ? (
-                projects.map((project) => (
-                  <ProjectCard key={project._id} project={project} />
+                projects.map((project, index) => (
+                  <ProjectCard
+                    key={project._id}
+                    project={project}
+                    index={index}
+                  />
                 ))
               ) : (
                 <p className="text-slate-500 italic col-span-full text-center py-10">
-                  No projects found. Check your MongoDB connection and Seed
-                  script!
+                  Error: No projects found
                 </p>
               )}
             </div>

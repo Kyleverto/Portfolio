@@ -1,39 +1,71 @@
+import { useState, useEffect } from "react"; // Add these imports
 import { Github, ExternalLink } from "lucide-react";
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, index }) => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, index * 100);
+
+    return () => clearTimeout(timer);
+  }, [index]);
+
+  const getTechStyles = (tech) => {
+    const name = tech.toLowerCase();
+    if (name.includes("react"))
+      return "bg-cyan-500/20 text-cyan-400 border-cyan-500/30";
+    if (name.includes("node"))
+      return "bg-green-500/20 text-green-400 border-green-500/30";
+    if (name.includes("express"))
+      return "bg-orange-500/20 text-orange-400 border-orange-500/30";
+    if (name.includes("mongo"))
+      return "bg-red-500/20 text-red-400 border-red-500/30";
+    if (name.includes("tailwind"))
+      return "bg-purple-500/20 text-purple-400 border-purple-500/30";
+    if (name.includes("javascript") || name.includes("js"))
+      return "bg-yellow-500/20 text-yellow-400 border-yellow-500/30";
+    return "bg-blue-500/10 text-blue-400 border-blue-500/20";
+  };
+
   return (
-    <div className="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden hover:border-blue-500/50 transition-all group">
-      {/* Project Image Placeholder */}
-      <div className="h-48 bg-slate-800 flex items-center justify-center text-slate-600">
-        <span className="group-hover:scale-110 transition-transform text-xs uppercase tracking-widest font-bold">
-          {project.title} Preview
+    <div
+      className={`bg-slate-900 border border-slate-800 rounded-xl overflow-hidden hover:border-blue-500/40 transition-all duration-700 ease-out group flex flex-col h-full
+        ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+    >
+      {/* ... rest of your ProjectCard code remains the same ... */}
+      <div className="h-48 bg-slate-800/50 flex items-center justify-center text-slate-600 border-b border-slate-800">
+        <span className="group-hover:scale-110 transition-transform text-[10px] uppercase tracking-[0.2em] font-bold">
+          {project.title}
         </span>
       </div>
 
-      <div className="p-6">
-        <h4 className="text-xl font-bold mb-2 text-white">{project.title}</h4>
-        <p className="text-slate-400 text-sm mb-4 line-clamp-2">
+      <div className="p-6 flex flex-col flex-grow">
+        <h4 className="text-xl font-bold mb-2 text-white group-hover:text-blue-400 transition-colors">
+          {project.title}
+        </h4>
+        <p className="text-slate-400 text-sm mb-6 line-clamp-2">
           {project.description}
         </p>
 
-        {/* Tech Tags */}
-        <div className="flex flex-wrap gap-2 mb-6">
-          {project.technologies.map((tech, index) => (
+        <div className="flex flex-wrap gap-2 mb-8 mt-auto">
+          {project.technologies.map((tech, i) => (
             <span
-              key={index}
-              className="text-[10px] uppercase font-bold bg-blue-500/10 text-blue-400 px-2 py-1 rounded"
+              key={i}
+              className={`text-[10px] uppercase font-bold px-2.5 py-1 rounded-full border ${getTechStyles(tech)}`}
             >
               {tech}
             </span>
           ))}
         </div>
 
-        {/* Links */}
-        <div className="flex justify-between items-center border-t border-slate-800 pt-4">
+        <div className="flex justify-between items-center border-t border-slate-800 pt-5">
           <a
             href={project.githubLink}
             target="_blank"
-            className="text-slate-400 hover:text-white flex items-center gap-2 text-xs font-medium transition-colors"
+            rel="noreferrer"
+            className="text-slate-400 hover:text-white flex items-center gap-2 text-xs font-semibold transition-colors"
           >
             <Github size={16} /> Code
           </a>
@@ -41,7 +73,8 @@ const ProjectCard = ({ project }) => {
             <a
               href={project.liveDemo}
               target="_blank"
-              className="text-blue-400 hover:text-blue-300 flex items-center gap-2 text-xs font-medium transition-colors"
+              rel="noreferrer"
+              className="text-blue-400 hover:text-blue-300 flex items-center gap-2 text-xs font-semibold transition-colors"
             >
               Live Demo <ExternalLink size={16} />
             </a>
