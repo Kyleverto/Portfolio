@@ -22,4 +22,4 @@ This project is built using the **MERN Stack** and follows a modern, decoupled a
 
 I am a **Junior Software Development Major**. I am passionate about building clean, efficient, and scalable web applications. This portfolio serves as a central hub for the projects I’ve developed throughout my collegiate career.
 
-Contact: kyleverto@gmail.com | GitHub: https://github.com/kyleverto
+**Contact:** kyleverto@gmail.com | GitHub: https://github.com/kyleverto
