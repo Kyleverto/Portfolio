@@ -1,4 +1,4 @@
-# MERN Stack Developer Portfolio
+# Personal Developer Portfolio
 
 A professional, full-stack portfolio website built to showcase my software development projects. This application features a React frontend, a Node/Express API, and a MongoDB database.
 
@@ -17,6 +17,7 @@ This project is built using the **MERN Stack** and follows a modern, decoupled a
 - **Staggered Animations:** Custom CSS transitions for an enhanced user experience during page load.
 - **Clean Codebase:** Implementation of the **Controller-Route-Model** pattern for backend scalability.
 - **AWS EC2 Hosted:** Designed for 100% uptime and maximum security that ensures an HTTPS connection
+- **CI/CD Integration** Built with a **Github Webhook** to run a redeploy script automatically whenever I push to the repository.
 
 ## 👨‍💻 About Me
 
