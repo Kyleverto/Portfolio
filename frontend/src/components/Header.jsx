@@ -1,4 +1,5 @@
-import { Mail, Github } from "lucide-react";
+import { Mail } from "lucide-react";
+import GithubIcon from "../assets/github.svg?react";
 
 const Header = () => {
   return (
@@ -24,13 +25,11 @@ const Header = () => {
           href="https://github.com/kyleverto"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 hover:text-blue-400 transition-colors"
+          className="text-slate-700 hover:text-blue-400 flex items-center gap-2 text-sm font-medium transition-colors group"
           aria-label="GitHub Profile"
         >
-          <Github size={20} />
-          <span className="hidden md:inline text-sm font-medium">
-            github.com/kyleverto
-          </span>
+          <GithubIcon className="w-6 h-6 fill-current transition-transform group-hover:scale-110" />
+          <span className="hidden md:inline">Github.com/Kyleverto</span>
         </a>
       </div>
     </header>

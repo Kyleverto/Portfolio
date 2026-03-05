@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"; // Add these imports
-import { Github, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
+import GithubIcon from "../assets/github.svg?react";
 
 const ProjectCard = ({ project, index }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -34,7 +35,6 @@ const ProjectCard = ({ project, index }) => {
       className={`bg-slate-900 border border-slate-800 rounded-xl overflow-hidden hover:border-blue-500/40 transition-all duration-700 ease-out group flex flex-col h-full
         ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
     >
-      {/* ... rest of your ProjectCard code remains the same ... */}
       <div className="h-48 bg-slate-800/50 flex items-center justify-center text-slate-600 border-b border-slate-800">
         <span className="group-hover:scale-110 transition-transform text-[10px] uppercase tracking-[0.2em] font-bold">
           {project.title}
@@ -67,7 +67,8 @@ const ProjectCard = ({ project, index }) => {
             rel="noreferrer"
             className="text-slate-400 hover:text-white flex items-center gap-2 text-xs font-semibold transition-colors"
           >
-            <Github size={16} /> Code
+            <GithubIcon className="w-4 h-4 fill-current transition-transform group-hover:scale-110" />{" "}
+            Code
           </a>
           {project.liveDemo && (
             <a
