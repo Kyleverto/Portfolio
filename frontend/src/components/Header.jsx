@@ -12,24 +12,25 @@ const Header = () => {
       <div className="flex gap-6 items-center">
         <a
           href="mailto:Kyleverto@gmail.com"
-          className="flex items-center gap-2 hover:text-blue-400 transition-colors"
+          className="flex items-center gap-2 hover:text-blue-400 transition-colors group"
           aria-label="Email Kyle"
         >
-          <Mail size={20} />
+          <Mail size={20} className="transition-transform" />
           <span className="hidden md:inline text-sm font-medium">
             Kyleverto@gmail.com
           </span>
         </a>
-
         <a
           href="https://github.com/kyleverto"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-slate-700 hover:text-blue-400 flex items-center gap-2 text-sm font-medium transition-colors group"
+          className="flex items-center gap-2 hover:text-blue-400 transition-colors group"
           aria-label="GitHub Profile"
         >
-          <GithubIcon className="w-6 h-6 fill-current transition-transform group-hover:scale-110" />
-          <span className="hidden md:inline">Github.com/Kyleverto</span>
+          <GithubIcon className="w-5 h-5 fill-current transition-transform" />
+          <span className="hidden md:inline text-sm font-medium">
+            Github.com/Kyleverto
+          </span>
         </a>
       </div>
     </header>
