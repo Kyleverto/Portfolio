@@ -25,7 +25,7 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 selection:bg-blue-500/30">
+    <div className="flex flex-col min-h-screen text-slate-100 selection:bg-blue-500/30">
       <Header />
 
       <main className="max-w-6xl mx-auto px-6">
