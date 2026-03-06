@@ -35,8 +35,21 @@ const ProjectCard = ({ project, index }) => {
       className={`bg-slate-900 border border-slate-800 rounded-xl overflow-hidden hover:border-blue-500/40 transition-all duration-700 ease-out group flex flex-col h-full
         ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
     >
-      <div className="h-48 bg-slate-800/50 flex items-center justify-center text-slate-600 border-b border-slate-800">
-        <span className="group-hover:scale-110 transition-transform text-[10px] uppercase tracking-[0.2em] font-bold">
+      <div className="h-48 overflow-hidden bg-slate-800/50 flex items-center justify-center text-slate-600 border-b border-slate-800 relative">
+        {project.image && project.image !== "default-project.jpg" ? (
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            onError={(e) => {
+              e.target.style.display = "none";
+              e.target.nextSibling.style.display = "flex";
+            }}
+          />
+        ) : null}
+        <span
+          className={`absolute inset-0 flex items-center justify-center group-hover:scale-110 transition-transform text-[10px] uppercase tracking-[0.2em] font-bold ${project.image && project.image !== "default-project.jpg" ? "hidden" : ""}`}
+        >
           {project.title}
         </span>
       </div>
