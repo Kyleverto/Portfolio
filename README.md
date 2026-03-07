@@ -2,7 +2,7 @@
 
 A professional, full-stack portfolio website built to showcase my software development projects. This application features a React frontend, a Node/Express API, and a MongoDB database.
 
-## 🚀 Architecture Overview
+## Architecture Overview
 
 This project is built using the **MERN Stack** and follows a modern, decoupled architecture:
 
@@ -10,7 +10,7 @@ This project is built using the **MERN Stack** and follows a modern, decoupled a
 - **Backend:** A RESTful API built with **Node.js** and **Express** hosted on an **AWS EC2 instance**.
 - **Database:** **MongoDB Atlas** utilized for cloud data storage, managed via **Mongoose**.
 
-## ✨ Key Features
+## Key Features
 
 - **Dynamic Project Fetching:** Projects are retrieved from a live MongoDB database rather than being hardcoded.
 - **Responsive Design:** Fully optimized for mobile and desktop viewing.
@@ -19,7 +19,7 @@ This project is built using the **MERN Stack** and follows a modern, decoupled a
 - **AWS EC2 Hosted:** Designed for 100% uptime and maximum security that ensures an HTTPS connection
 - **CI/CD Integration** Built with a **Github Webhook** to run a redeploy script automatically whenever I push to the repository.
 
-## 👨‍💻 About Me
+## About Me
 
 I am a **Junior Software Development Major**. I am passionate about building clean, efficient, and scalable web applications. This portfolio serves as a central hub for the projects I’ve developed throughout my collegiate career.
 
